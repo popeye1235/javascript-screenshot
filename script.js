@@ -21,13 +21,11 @@ const captureScreen = async () => {
             ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
             console.log(canvas);
             stream.getVideoTracks()[0].stop(); //terminating first video track of the stream
-            // document.body.appendChild(canvas);
             // passing canvas data Url as screenshot preview src
             screenshotPreview.querySelector("img").src = canvas.toDataURL();
             screenshotPreview.classList.add("show");
         })
         video.srcObject = stream; //passing capture stream data as video source object
-        console.log(stream);
     } catch (error) { // if image couldn't capture by any reason, then alert the msg
         alert("Failed to capture screenshot!!")
     }
