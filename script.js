@@ -20,7 +20,8 @@ const captureScreen = async () => {
             // drawing an image from the captured video stream
             ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
             console.log(canvas);
-            stream.getVideoTracks()[0].stop(); //terminating first video track of the stream
+            //terminating first video track of the stream
+            stream.getVideoTracks()[0].stop(); 
             // passing canvas data Url as screenshot preview src
             screenshotPreview.querySelector("img").src = canvas.toDataURL();
             screenshotPreview.classList.add("show");
